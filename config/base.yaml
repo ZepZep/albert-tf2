@@ -1,0 +1,36 @@
+data:
+    do_lower_case: True
+    do_whole_word_mask: True
+    do_permutation: False
+    favor_shorter_ngram: True
+    ngram: 3
+    
+    dupe_factor: 40
+    masked_lm_prob: 0.15
+    short_seq_prob: 0.1
+
+model:
+    name: "base"
+    width: 256
+    max_predictions_per_seq: 20
+
+
+pretraining:
+    train_batch_size: 32
+    eval_batch_size: 64
+    
+    learning_rate: 0.00176
+    poly_power: 1.0
+    num_train_steps: 125000
+    save_checkpoints_steps: 500
+    keep_checkpoint_max: 5
+
+
+albert:
+
+
+todo:
+    model:
+        num_warmup_steps: 3125
+        iterations_per_loop: 1000
+        max_eval_steps: 100
